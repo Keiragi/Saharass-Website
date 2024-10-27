@@ -24,7 +24,7 @@
     }
 
     #space_1 {
-      line-height: 0px
+      line-height: 50px
     }
 
     #headline {
@@ -38,6 +38,7 @@
 
     .main {
       text-align: center;
+      font-size: 25px;
     }
 
     .xicon img {
@@ -74,6 +75,7 @@
 
     .title {
       display: block;
+      color: white;
       letter-spacing: 2px;
       font-size: clamp(10px, 10vw, 162px);
       height: auto;
@@ -82,12 +84,16 @@
       margin: 75px;
       font-family: "Barlow_SemiBold", sans-serif;
       font-weight: 900;
+      -webkit-text-stroke-width: 3px;
+      -webkit-text-stroke-color: black;
+      text-shadow: 0 0 20px #FFF;
     }
 
     @font-face {
       font-family: "PTSerif";
       src: url("./fonts/PTSerif-BoldItalic.ttf") format("truetype");
     }
+
     @font-face {
       font-family: "Barlow_SemiBold";
       src: url("./fonts/Barlow-SemiBold.ttf") format("truetype");
@@ -106,6 +112,7 @@
     </div>
   </div>
   <div id="headline">
+    <div id="space_1"><br></div>
     <h3>―― サハラス ――</h3>
     <h5>Minecraft UnOfficial RPG Map</h5>
     <h5>2024年内配信<span class="schedule">予定</span></h5>
@@ -114,9 +121,9 @@
   <div class="main">
     <a href="https://x.com/S_Keiragi">制作者Twitter(現X)</a>
 
-    <span class="xicon">
+    <div class="xicon">
       <img src="./images/xicon.png" alt="Xアイコン" />
-    </span>
+    </div>
 
   </div>
 
