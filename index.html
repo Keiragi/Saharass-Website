@@ -31,7 +31,7 @@
       color: black;
       font-size: 50px;
       text-align: center;
-      line-height: 50px
+      line-height: 100px
         /*width: 1000px;
     background-color: #f0f8f0;*/
     }
@@ -74,11 +74,23 @@
 
     .title {
       display: block;
-      font-size: clamp(10px, 8.4vw, 162px);
+      letter-spacing: 2px;
+      font-size: clamp(10px, 10vw, 162px);
       height: auto;
       width: auto;
       text-align: center;
       margin: 75px;
+      font-family: "Barlow_SemiBold", sans-serif;
+      font-weight: 900;
+    }
+
+    @font-face {
+      font-family: "PTSerif";
+      src: url("./fonts/PTSerif-BoldItalic.ttf") format("truetype");
+    }
+    @font-face {
+      font-family: "Barlow_SemiBold";
+      src: url("./fonts/Barlow-SemiBold.ttf") format("truetype");
     }
 
     .schedule {
