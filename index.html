@@ -34,6 +34,9 @@
     }
 
     .background {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
       /* 文字中央寄せ */
       padding: 260px;
@@ -49,10 +52,6 @@
       /* 背景画像指定 */
     }
 
-    .translucent {
-      background-color: rgba(255, 255, 255, 0.562);
-    }
-
     .background-text {
       border: solid 1px;
       /* 枠線指定 */
@@ -60,7 +59,9 @@
       color: black;
       font-size: 4.2vw;
       text-align: center;
-      line-height: 7.8vw
+      line-height: 7.8vw;
+      width: fit-content;
+      background-color: rgba(255, 255, 255, 0.562);
     }
 
     .title {
@@ -79,10 +80,8 @@
 
 <body>
   <div class="background">
-    <div class="translucent">
-      <div class="background-text">
-        <h1 class="title">Saharass</h1>
-      </div>
+    <div class="background-text">
+      <h1 class="title">Saharass</h1>
     </div>
   </div>
   <div id="headline">
