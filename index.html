@@ -33,6 +33,9 @@
     border: solid 2px;      /* 枠線指定 */
     background-size: cover;
     background-position: center;
+    max-width: 100%;
+    height: auto;
+    width /***/:auto;
     background-image: url(https://pbs.twimg.com/media/Ga4dPQMakAArB3Y?format=jpg&name=large);    /* 背景画像指定 */
 }
 .translucent{
@@ -40,12 +43,12 @@
 }
 .background-text {
     border:  solid 1px;                             /* 枠線指定 */
-    display:  inline-block;                         /* インラインブロックにする */
-    padding: 3px 300px;                             /* 余白指定 */
+    display: block;                         
     color: black;
-  font-size: 80px;
-  text-align: center;
-  line-height: 150px
+    font-size: clamp(1px, 8vw, 80px);
+    text-align: center;
+    line-height: 150px
+  
 }
 .schedule{
   color:rgb(238, 238, 238)
