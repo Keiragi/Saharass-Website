@@ -103,12 +103,6 @@
       color: rgb(238, 238, 238)
     }
   </style>
-  <script>
-    const now = new Date()
-    const hour = now.getHours()
-
-    document.getElementById("time_lapse").style.backgroundImage = `url(./images/time_lapse/${hour}.webp)`
-  </script>
 </head>
 
 <body>
@@ -136,5 +130,11 @@
 
   <!--メモ記述用コード-->
 </body>
+<script>
+  const now = new Date()
+  const hour = now.getHours()
+
+  document.getElementById("time_lapse").style.backgroundImage = `url(./images/time_lapse/${hour}.webp)`
+</script>
 
 </html>
