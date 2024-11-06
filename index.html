@@ -103,10 +103,16 @@
       color: rgb(238, 238, 238)
     }
   </style>
+  <script>
+    const now = new Date()
+    const hour = now.getHours()
+
+    document.getElementById("time_lapse").style.backgroundImage = `url(./images/time_lapse/${hour}.webp)`
+  </script>
 </head>
 
 <body>
-  <div class="background">
+  <div class="background" id="time_lapse">
     <div class="background-text">
       <h1 class="title">Saharass</h1>
     </div>
