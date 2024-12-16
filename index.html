@@ -106,6 +106,37 @@
         inset 2px 2px 3px rgba(0, 0, 0, 0.6);
     }
 
+    @media (max-width: 414px) {
+
+      /* ロゴの位置を調整 */
+      .background .logo>img {
+        position: relative;
+        top: 10vh;
+      }
+
+      .background .styled {
+        font-size: 2.5vw;
+        /* フォントサイズを小さくする */
+        width: 80vw;
+        /* ボタンの幅を80%に変更 */
+        height: 8vh;
+        /* 高さも調整 */
+      }
+
+      /* ボタンのグループ */
+      .background .button-group {
+        width: 90vw;
+        /* 横幅を90%に */
+        gap: 2vh;
+        /* ボタン間のスペースを広げる */
+      }
+
+      .background .button-group .styled {
+        width: 48%;
+        /* ボタンを2つ並べて幅を調整 */
+      }
+    }
+
     @font-face {
       font-family: "PTSerif";
       src: url("./fonts/PTSerif-BoldItalic.ttf") format("truetype");
