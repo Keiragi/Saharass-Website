@@ -47,15 +47,17 @@
     }
 
     .background .logo>img {
-      width: 49%;
+      width: 48.75%;
       max-width: 100%;
       height: auto;
       position: absolute;
-      top: 10vh;
+      top: 11vh;
     }
 
     .background .styled {
       font-family: "JF-AyuMin18", sans-serif;
+      position: relative;
+      top: 10vh;
       display: block;
       margin-bottom: 1vh;
       margin-left: auto;
@@ -65,7 +67,7 @@
       max-width: 700px;
       min-width: 50xp;
       height: 7.5vh;
-      min-height: 50xp;
+      min-height: 30px;
       max-height: 70px;
       letter-spacing: 2px;
       line-height: 5vh;
@@ -79,11 +81,20 @@
         inset -3px -3px 2px rgba(64, 64, 64, 0.6);
     }
 
-    @media (max-width: 768px) {
-      .background .logo>img {
-        width: 70%;
-        margin-top: 10px;
-      }
+    .background .button-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 2%;
+      width: 40vw;
+      max-width: 700px;
+      margin: 0 auto;
+      margin-top: 5vh;
+    }
+
+    .background .button-group .styled {
+      width: 49%;
+      height: 7.5vh;
+      font-size: 1.5vw;
     }
 
     .background .styled:hover {
@@ -120,6 +131,11 @@
       <img src="./images/logo.webp">
       <button class="styled" type="button">シングルプレイ</button>
       <button class="styled" type="button">マルチプレイ</button>
+      <button class="styled" type="button">リンクポータル</button>
+      <div class="button-group">
+        <button class="styled" type="button">推奨設定...</button>
+        <button class="styled" onclick="window.close();" type="button">終了</button>
+      </div>
     </div>
   </div>
 </body>
