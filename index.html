@@ -45,50 +45,84 @@
 
     .xicon img {
       /*画像の幅を50px*/
-      width: 50px;
+      width: 35px;
+      position: relative;
+      top: 7px
     }
 
     .background {
       display: flex;
       justify-content: center;
+      /* 横方向で中央寄せ */
       align-items: center;
+      /* 縦方向で中央寄せ */
       text-align: center;
-      /* 文字中央寄せ */
       background-size: cover;
       background-position: center;
       max-width: 100%;
       height: 100vh;
       width: auto;
-      background-image: url(./images/top.webp);
-      /* 背景画像指定 */
     }
 
-    .background-text {
-      border: solid 1px;
-      /* 枠線指定 */
-      display: block;
-      color: black;
-      font-size: 4.2vw;
-      text-align: center;
-      line-height: 7.8vw;
-      width: fit-content;
-      background-color: rgba(255, 255, 255, 0.562);
+    .background .logo {
+      display: flex;
+      justify-content: center;
+      /* 横方向で中央寄せ */
+      align-items: center;
+      /* 縦方向で中央寄せ */
+      flex-direction: column;
+      /* 縦方向に並べる */
+      height: 100%;
+      width: 100%;
     }
 
-    .title {
-      display: block;
-      color: white;
-      letter-spacing: 2px;
-      font-size: clamp(10px, 10vw, 162px);
+    .background .logo>img {
+      width: 49%;
+      max-width: 100%;
+      height: 100vh;
       height: auto;
-      width: auto;
+      position: absolute;
+      top: 120px;
+    }
+
+    .background .styled {
+      font-family: "JF-AyuMin18", sans-serif;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border: 3px solid #000;
+      width: 700px;
+      letter-spacing: 2px;
+      max-width: 100%;
+      line-height: 2.1;
+      font-size: 1.75rem;
       text-align: center;
-      margin: 75px;
-      font-family: "Barlow_SemiBold", sans-serif;
-      font-weight: 900;
-      -webkit-text-stroke-width: 3px;
-      -webkit-text-stroke-color: black;
-      text-shadow: 0 0 20px #FFF;
+      color: #fff;
+      text-shadow: 2px 2px 2px #000;
+      background-color: #949494;
+      box-shadow:
+        inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+        inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    }
+
+    @media (max-width: 768px) {
+      .background .logo>img {
+        width: 70%;
+        /* モバイルサイズで画像幅を70%に */
+        margin-top: 10px;
+        /* 少し上に配置 */
+      }
+    }
+
+    .background .styled:hover {
+      background-color: #949494;
+      border: 3px solid #fff
+    }
+
+    .background .styled:active {
+      box-shadow:
+        inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+        inset 2px 2px 3px rgba(0, 0, 0, 0.6);
     }
 
     @font-face {
@@ -101,36 +135,23 @@
       src: url("./fonts/Barlow-SemiBold.ttf") format("truetype");
     }
 
-    .schedule {
-      color: rgb(238, 238, 238)
+    @font-face {
+      font-family: "JF-AyuMin18";
+      src: url("./fonts/JF-Dot-AyuMin18.ttf") format("truetype");
     }
   </style>
 </head>
 
 <body>
   <div class="background" id="time_lapse">
-    <div class="background-text">
-      <h1 class="title">Saharass</h1>
+    <div class="logo">
+      <img src="./images/logo.webp">
+      <button class="styled" type="button">シングルプレイ</button>
+      <br>
+      <button class="styled" type="button">マルチプレイ</button>
+      <br>
     </div>
   </div>
-  <div id="headline">
-    <div id="space_1"><br></div>
-    <h3>―― サハラス ――</h3>
-    <h4>Minecraft UnOfficial RPG Map</h4>
-    <h5>2024年内配信<span class="schedule">予定</span></h5>
-
-  </div>
-  <div class="main">
-    <a href="https://x.com/S_Keiragi">制作者Twitter(現X)</a><br>
-    <a href="https://github.com/Keiragi">GitHub</a>
-
-    <div class="xicon">
-      <img src="./images/xicon.webp" alt="Xアイコン" />
-    </div>
-
-  </div>
-
-  <!--メモ記述用コード-->
 </body>
 <script>
   const now = new Date()
