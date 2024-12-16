@@ -139,11 +139,26 @@
     </div>
   </div>
 </body>
+<audio id="button-sound" src="audios\button_click.mp3"></audio>
 <script>
+  // 現在時刻から背景を選択
   const now = new Date()
   const hour = now.getHours()
-
   document.getElementById("time_lapse").style.backgroundImage = `url(./images/time_lapse/${hour}.webp)`
+
+
+  // オブジェクト名を取得 + 音量
+  const buttons = document.querySelectorAll('.styled');
+  const buttonSound = document.getElementById('button-sound');
+  buttonSound.volume = 0.25;
+
+  // クリック音
+  buttons.forEach(button => {
+    button.addEventListener('mousedown', () => {
+      buttonSound.currentTime = 0;
+      buttonSound.play();
+    });
+  });
 </script>
 
 </html>
