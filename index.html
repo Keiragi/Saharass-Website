@@ -7,7 +7,6 @@
   <meta property="og:image" content="https://saharass.pages.dev/images/top.webp">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Saharass">
-  <!-- <meta property="og:site_name" content="Saharass"> -->
   <meta property="og:description" content="&quot;思いと決意を&quot;">
 
   <meta name="twitter:card" content="summary">
@@ -37,7 +36,7 @@
       width: auto;
     }
 
-    .background .logo {
+    .logo {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -46,7 +45,7 @@
       width: 100%;
     }
 
-    .background .logo>img {
+    .logo>img {
       width: 48.75%;
       max-width: 100%;
       height: auto;
@@ -54,7 +53,7 @@
       top: 11vh;
     }
 
-    .background .styled {
+    .styled {
       font-family: "JF-AyuMin18", sans-serif;
       position: relative;
       top: 10vh;
@@ -65,7 +64,7 @@
       border: 3px solid #000;
       width: 40vw;
       max-width: 700px;
-      min-width: 50xp;
+      min-width: 50px;
       height: 7.5vh;
       min-height: 30px;
       max-height: 70px;
@@ -76,12 +75,11 @@
       color: #fff;
       text-shadow: 2px 2px 2px #000;
       background-color: #777777;
-      box-shadow:
-        inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+      box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
         inset -3px -3px 2px rgba(64, 64, 64, 0.6);
     }
 
-    .background .button-group {
+    .button-group {
       display: flex;
       justify-content: space-between;
       gap: 2%;
@@ -91,11 +89,10 @@
       margin-top: 5vh;
     }
 
-    .background .button-group .styled {
-      width: 49%;
+    .button-group .styled {
+      position: relative;
     }
 
-    .background .styled:hover {
       background-color: #949494;
       border: 3px solid #fff
     }
@@ -107,33 +104,24 @@
     }
 
     @media (max-width: 414px) {
-
-      /* ロゴの位置を調整 */
-      .background .logo>img {
+      .logo>img {
         position: relative;
         top: 10vh;
       }
 
-      .background .styled {
+      .styled {
         font-size: 2.5vw;
-        /* フォントサイズを小さくする */
         width: 80vw;
-        /* ボタンの幅を80%に変更 */
         height: 8vh;
-        /* 高さも調整 */
       }
 
-      /* ボタンのグループ */
-      .background .button-group {
+      .button-group {
         width: 90vw;
-        /* 横幅を90%に */
         gap: 2vh;
-        /* ボタン間のスペースを広げる */
       }
 
-      .background .button-group .styled {
+      .button-group .styled {
         width: 48%;
-        /* ボタンを2つ並べて幅を調整 */
       }
     }
 
@@ -158,31 +146,32 @@
   <div class="background" id="time_lapse">
     <div class="logo">
       <img src="./images/logo.webp">
-      <button class="styled" type="button">シングルプレイ</button>
-      <button class="styled" type="button">マルチプレイ</button>
-      <button class="styled" type="button">リンクポータル</button>
+      <button class="styled">シングルプレイ</button>
+      <button class="styled">マルチプレイ</button>
+      <button class="styled">世界の歩き方</button>
       <div class="button-group">
-        <button class="styled" type="button">推奨設定...</button>
-        <button class="styled" onclick="window.close();" type="button">終了</button>
+        <button class="styled">推奨設定...</button>
+        <button class="styled close-button" onclick="window.close();">終了</button>
       </div>
     </div>
   </div>
 </body>
-<audio id="button-sound" src="audios\button_click.mp3"></audio>
+
+<audio id="button-sound" src="audios/button_click.mp3"></audio>
+
 <script>
   // 現在時刻から背景を選択
-  const now = new Date()
-  const hour = now.getHours()
-  document.getElementById("time_lapse").style.backgroundImage = `url(./images/time_lapse/${hour}.webp)`
-
+  const now = new Date();
+  const hour = now.getHours();
+  document.getElementById("time_lapse").style.backgroundImage = `url(./images/time_lapse/${hour}.webp)`;
 
   // オブジェクト名を取得 + 音量
-  const buttons = document.querySelectorAll('.styled');
+  const buttonElements = document.querySelectorAll('.styled');
   const buttonSound = document.getElementById('button-sound');
   buttonSound.volume = 0.25;
 
   // クリック音
-  buttons.forEach(button => {
+  buttonElements.forEach(button => {
     button.addEventListener('mousedown', () => {
       buttonSound.currentTime = 0;
       buttonSound.play();
