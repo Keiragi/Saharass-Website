@@ -22,7 +22,7 @@
       color: black;
       background-color: white;
       font-family: sans-serif;
-      margin: 0px;
+      margin: 0;
     }
 
     .background {
@@ -32,9 +32,8 @@
       text-align: center;
       background-size: cover;
       background-position: center;
-      max-width: 100%;
       height: 100vh;
-      width: auto;
+      width: 100%;
     }
 
     .icon-link {
@@ -63,18 +62,18 @@
       font-size: 2vh;
       color: white;
       font-weight: bold;
-      transition: background-color 0.3s ease, transform 0.3s ease;
+      transition: background-color 0.3s, transform 0.3s;
+    }
     }
 
     .discord-icon {
       font-size: 2.5vh;
       color: white;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s;
     }
 
     .discord-button span {
       font-size: 2vh;
-      transition: color 0.3s ease, transform 0.3s ease;
       user-select: none;
       /* テキスト選択を無効化 */
     }
@@ -88,7 +87,7 @@
       width: 100%;
     }
 
-    .logo>img {
+    .logo img {
       width: 48.75%;
       max-width: 100%;
       height: auto;
@@ -101,9 +100,7 @@
       position: relative;
       top: 10vh;
       display: block;
-      margin-bottom: 1vh;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto 1vh;
       border: 3px solid #000;
       width: 40vw;
       max-width: 700px;
@@ -117,9 +114,14 @@
       text-align: center;
       color: #fff;
       text-shadow: 2px 2px 2px #000;
-      background-color: #777777;
-      box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+      background-color: #777;
+      box-shadow:
+        inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+        /* 内側の明るい影 */
         inset -3px -3px 2px rgba(64, 64, 64, 0.6);
+      /* 内側の暗い影 */
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
     }
 
     .button-group {
@@ -128,12 +130,7 @@
       gap: 2%;
       width: 40vw;
       max-width: 700px;
-      margin: 0 auto;
-      margin-top: 5vh;
-    }
-
-    .button-group .styled {
-      position: relative;
+      margin: 5vh auto 0;
     }
 
     .button-group .close-button::after {
@@ -152,7 +149,7 @@
       visibility: hidden;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
+      transition: opacity 0.1s, visibility 0.1s;
     }
 
     .button-group .close-button:hover::after {
@@ -171,7 +168,7 @@
     }
 
     @media (max-width: 414px) {
-      .logo>img {
+      .logo img {
         position: relative;
         top: 10vh;
       }
@@ -194,7 +191,7 @@
 
     .fade-in {
       opacity: 0;
-      transition: opacity 1s ease-in-out;
+      transition: opacity 1s;
       /* フェードインの速度を調整 */
     }
 
