@@ -47,11 +47,6 @@
       /* カーソルをポインタに変更 */
     }
 
-    .discord-button:hover {
-      background-color: #4f65c8;
-      transform: translateY(1px);
-    }
-
     .discord-button {
       display: flex;
       align-items: center;
@@ -64,6 +59,10 @@
       font-weight: bold;
       transition: background-color 0.3s, transform 0.3s;
     }
+
+    .discord-button:hover {
+      background-color: #4f65c8;
+      transform: translateY(1px);
     }
 
     .discord-icon {
@@ -122,6 +121,15 @@
       /* 内側の暗い影 */
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
     }
+
+    .styled:hover {
+      background-color: #949494;
+      border: 3px solid #fff;
+    }
+
+    .styled:active {
+      box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+        inset 2px 2px 3px rgba(0, 0, 0, 0.6);
     }
 
     .button-group {
@@ -155,16 +163,6 @@
     .button-group .close-button:hover::after {
       visibility: visible;
       opacity: 1;
-    }
-
-    .styled:hover {
-      background-color: #949494;
-      border: 3px solid #fff;
-    }
-
-    .styled:active {
-      box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
-        inset 2px 2px 3px rgba(0, 0, 0, 0.6);
     }
 
     @media (max-width: 414px) {
