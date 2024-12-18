@@ -146,28 +146,29 @@
       margin: 5vh auto 0;
     }
 
-    .button-group .close-button::after {
-      content: "(タブが閉じられます)";
+    .tooltip {
+      font-family: "JF-AyuMin18", sans-serif;
+      margin: 7px;
+      font-size: 1.2vw;
       position: absolute;
-      bottom: calc(100% + 5px);
-      left: 50%;
-      transform: translateX(-50%);
-      white-space: nowrap;
-      background-color: #202020;
-      color: #fff;
-      padding: 5px 10px;
-      border-radius: 20px;
-      border: 1px solid #fff;
-      font-size: 1vw;
+      background-color: black;
+      color: white;
+      /* テキストが見えるように色を設定 */
+      padding: 10px;
+      border: 2px solid #2c0a65;
+      outline: 3px solid #000;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
       visibility: hidden;
       opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.1s, visibility 0.1s;
+      /* アニメーションのために初期状態は透明 */
+      z-index: 1000;
     }
 
-    .button-group .close-button:hover::after {
+    .tooltip.visible {
       visibility: visible;
       opacity: 1;
+      /* 表示状態で不透明に */
     }
 
     @media (max-width: 414px) {
@@ -234,8 +235,9 @@
       <button class="styled fade-in">世界の歩き方</button>
       <div class="button-group fade-in">
         <button class="styled fade-in">その他...</button>
-        <button class="styled close-button fade-in" onclick="window.close();">終了</button>
+        <button class="styled button fade-in" id="tooltipButton" onclick="window.close();">終了</button>
       </div>
+      <div class="tooltip" id="tooltip">ホバー</div>
     </div>
   </div>
 
@@ -272,7 +274,44 @@
         });
       }, 50);
     }
-  </script>
+
+    const tooltip = document.getElementById('tooltip');
+    const button = document.getElementById('tooltipButton');
+
+    // ボタンにホバーしたときに吹き出しを表示
+    button.addEventListener('mouseover', () => {
+      tooltip.textContent = "タブが閉じられます。"; // テキストを動的に設定
+      tooltip.classList.add('visible');
+    });
+
+    // ボタンから外れたときに吹き出しを非表示
+    button.addEventListener('mouseout', () => {
+      tooltip.classList.remove('visible');
+    });
+
+    // カーソルが動いたときに吹き出しを追尾
+    document.addEventListener('mousemove', (e) => {
+      if (tooltip.classList.contains('visible')) {
+        const tooltipWidth = tooltip.offsetWidth;
+        const tooltipHeight = tooltip.offsetHeight;
+
+        let tooltipX = e.pageX + 10;
+        let tooltipY = e.pageY + 10;
+
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+
+        if (tooltipX + tooltipWidth > windowWidth) {
+          tooltipX = windowWidth - tooltipWidth - 10;
+        }
+        if (tooltipY + tooltipHeight > windowHeight) {
+          tooltipY = windowHeight - tooltipHeight - 10;
+        }
+
+        tooltip.style.left = `${tooltipX}px`;
+        tooltip.style.top = `${tooltipY}px`;
+      }
+    });  </script>
 </body>
 
 </html>
