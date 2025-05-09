@@ -235,12 +235,13 @@
     </a>
     <div class="logo fade-in">
       <img src="./images/logo.webp" alt="Title Logo">
-      <button class="styled fade-in">シングルプレイ</button>
-      <button class="styled fade-in">マルチプレイ</button>
-      <button class="styled fade-in">世界の歩き方</button>
+      <button class="styled fade-in" data-tooltip="一人で世界を始める">シングルプレイ</button>
+      <button class="styled fade-in" data-tooltip="誰かと世界を始める">マルチプレイ</button>
+      <button class="styled fade-in" data-tooltip="彷徨ってしまったら">世界の歩き方</button>
       <div class="button-group fade-in">
-        <button class="styled fade-in">その他...</button>
-        <button class="styled fade-in" id="tooltipButton" onclick="window.close();">終了</button>
+        <button class="styled fade-in" data-tooltip="推奨設定、ライセンス">その他...</button>
+        <button class="styled fade-in" id="tooltipButton" data-tooltip="ページが閉じられます"
+          onclick="window.close();">終了</button>
       </div>
       <div class="tooltip" id="tooltip">ホバー</div>
     </div>
