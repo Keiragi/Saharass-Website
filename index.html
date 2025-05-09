@@ -47,75 +47,7 @@
 
   <audio id="button-sound" src="audios/button_click.mp3"></audio>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      setBackground();
-      enableButtonSound();
-      fadeInElements();
-    });
-
-    function setBackground() {
-      const now = new Date();
-      const hour = now.getHours();
-      document.getElementById("time_lapse").style.backgroundImage = `url(./images/time_lapse/${hour}.webp)`;
-    }
-
-    function enableButtonSound() {
-      const buttonSound = document.getElementById('button-sound');
-      buttonSound.volume = 0.25;
-      document.querySelectorAll('.styled').forEach(button => {
-        button.addEventListener('mousedown', () => {
-          buttonSound.currentTime = 0;
-          buttonSound.play();
-        });
-      });
-    }
-
-    function fadeInElements() {
-      setTimeout(() => {
-        document.querySelectorAll(".fade-in").forEach(element => {
-          element.classList.add("visible");
-        });
-      }, 50);
-    }
-
-    const tooltip = document.getElementById('tooltip');
-    const button = document.getElementById('tooltipButton');
-
-    // ボタンにホバーしたときに吹き出しを表示
-    button.addEventListener('mouseover', () => {
-      tooltip.textContent = "タブが閉じられます。"; // テキストを動的に設定
-      tooltip.classList.add('visible');
-    });
-
-    // ボタンから外れたときに吹き出しを非表示
-    button.addEventListener('mouseout', () => {
-      tooltip.classList.remove('visible');
-    });
-
-    // カーソルが動いたときに吹き出しを追尾
-    document.addEventListener('mousemove', (e) => {
-      if (tooltip.classList.contains('visible')) {
-        const tooltipWidth = tooltip.offsetWidth;
-        const tooltipHeight = tooltip.offsetHeight;
-
-        let tooltipX = e.pageX + 10;
-        let tooltipY = e.pageY + 10;
-
-        const windowWidth = window.innerWidth;
-        const windowHeight = window.innerHeight;
-
-        if (tooltipX + tooltipWidth > windowWidth) {
-          tooltipX = windowWidth - tooltipWidth - 10;
-        }
-        if (tooltipY + tooltipHeight > windowHeight) {
-          tooltipY = windowHeight - tooltipHeight - 10;
-        }
-
-        tooltip.style.left = `${tooltipX}px`;
-        tooltip.style.top = `${tooltipY}px`;
-      }
-    });  </script>
+  <script src="script.js"></script>
 </body>
 
 </html>
