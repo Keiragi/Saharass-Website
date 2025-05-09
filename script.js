@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   enableButtonSound();
   fadeInElements();
   setupTooltips();
+  setupScreenSwitching();
 });
 
 function setBackground() {
@@ -13,6 +14,7 @@ function setBackground() {
 
 function enableButtonSound() {
   const buttonSound = document.getElementById('button-sound');
+  if (!buttonSound) return;
   buttonSound.volume = 0.25;
   document.querySelectorAll('.styled').forEach(button => {
     button.addEventListener('mousedown', () => {
@@ -32,6 +34,7 @@ function fadeInElements() {
 
 function setupTooltips() {
   const tooltip = document.getElementById('tooltip');
+  if (!tooltip) return;
   const buttons = document.querySelectorAll('.styled');
 
   buttons.forEach(button => {
@@ -72,9 +75,31 @@ function setupTooltips() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const singlePlayerButton = document.querySelector(".styled[data-tooltip='一人で世界を始める']");
-  singlePlayerButton.addEventListener("click", () => {
-    window.location.href = "single.html";
+function setupScreenSwitching() {
+  const singleBtn = document.querySelector(".styled[id=single-button]");
+  const backBtn = document.getElementById("back-to-menu");
+
+  const mainMenu = document.getElementById("main-menu");
+  const singleScreen = document.getElementById("single-screen");
+
+  if (singleBtn) {
+    singleBtn.addEventListener("click", () => {
+      mainMenu.style.display = "none";
+      singleScreen.style.display = "flex"; // または block
+    });
+  }
+
+  if (backBtn) {
+    backBtn.addEventListener("click", () => {
+      singleScreen.style.display = "none";
+      mainMenu.style.display = "flex";
+    });
+  }
+}
+
+const closeBtn = document.getElementById("tooltipButton");
+if (closeBtn) {
+  closeBtn.addEventListener("click", () => {
+    window.close();
   });
-});
+}

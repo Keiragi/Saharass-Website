@@ -199,3 +199,22 @@ img {
   font-family: "JF-AyuMin18";
   src: url("./fonts/JF-Dot-AyuMin18.ttf") format("truetype");
 }
+
+#single-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.pre {
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px; border-radius: 12px;
+}
